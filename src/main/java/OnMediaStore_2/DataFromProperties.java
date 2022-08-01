@@ -1,21 +1,25 @@
 package OnMediaStore_2;
 
 import java.io.*;
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
-/*
+/**
  *The DataFromProperties class is used to set and retrieve key values
- * from a properties file
- * */
+ *  from a properties file
+ */
 public class DataFromProperties
 {
     //create the object
     private static final Properties media = new Properties();
 
+    /**
+     * This method gets an object of type DigitalVideoDisc,
+     * and saves his values into a property File
+     * called media.properties
+     * @param disc The disk to be added to the property file
+     */
     //to store data outside
     public static void setProperties(DigitalVideoDisc disc)
     {
@@ -38,6 +42,10 @@ public class DataFromProperties
         }
     }
 
+    /**
+     * Thios method returns a disk which was saved before in the property file
+     * @return the Disk that was stored at property file
+     */
     public static DigitalVideoDisc getProperties()
     {
         DigitalVideoDisc disc = new DigitalVideoDisc();
@@ -62,6 +70,11 @@ public class DataFromProperties
         return disc;
     }
 
+    /**
+     * This method takes as parameter a list of Disk and saves this list into a property file (mediaList.properties)
+     * The content would look like [MovieTitle|movie|5000.000000|director|5, MovieTitle|movie|5000.000000|director|5]
+     * @param list the list of DIst to be saved
+     */
     public static void setPropertyList(List<DigitalVideoDisc> list)
     {
         media.setProperty("list", list.toString());
@@ -75,6 +88,10 @@ public class DataFromProperties
         }
     }
 
+    /**
+     * This method returns the list of properties that were stored in the file (mediaList.properties)
+     * @return returns the list of properties that were stored in the file
+     */
     public static List<DigitalVideoDisc> getPropertyList()
     {
         List<DigitalVideoDisc> discsList = new ArrayList<>();
