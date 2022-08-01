@@ -1,5 +1,3 @@
-package OnMediaStore_2;
-
 public class DigitalVideoDisc
 {
     private String title;

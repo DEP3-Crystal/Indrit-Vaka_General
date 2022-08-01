@@ -6,11 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="General-Java" />
+        <module name="OnMediaStore_2" />
+        <module name="Vending_Machine" />
+        <module name="OnMediaStore_3" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="General-Java" target="15" />
-    </bytecodeTargetLevel>
   </component>
 </project>

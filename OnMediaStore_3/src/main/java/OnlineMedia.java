@@ -1,9 +1,6 @@
-package OnMediaStore_2;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class OnlineMedia
 {

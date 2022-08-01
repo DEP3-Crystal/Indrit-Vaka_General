@@ -1,4 +1,3 @@
-package OnMediaStore_2;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
