@@ -2,37 +2,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OnlineMedia
-{
+public class OnlineMedia {
+
     public static void main(String[] args)
     {
 
-
-        //creating an order
         Order order = new Order();
-
-        //Populating the order
-        DigitalVideoDisc disc1 = new DigitalVideoDisc("MovieTitle", Category.movie, 5000, "directorName", 5);
-        List<DigitalVideoDisc> diskList = new ArrayList<>();
-        diskList.add(disc1);
-        diskList.add(disc1);
-        diskList.add(disc1);
-        diskList.add(disc1);
-        order.addOrders(diskList);
-        //saving the data
-
-        //using property files
-        DataFromProperties.setProperties(disc1); //saves only one disk
-        DataFromProperties.setPropertyList(diskList); //saves a list of disks
-        //using json files
-        try
-        {
-            DataFromJson.addOrder(order);
-        } catch (IOException e)
-        {
-            throw new RuntimeException(e);
+        
+        populateOrder(order);
+        
+        boolean orderSaveSucceded = saveOrderInPropertiesFile();
+        if (!orderSaveSucceded) {
+            System.exit(0);
         }
-
+        
+       
 
         //Reading from files
         //Json
@@ -63,6 +47,31 @@ public class OnlineMedia
 
     }
 
+    public static void populateOrder(Order order) {
+        DigitalVideoDisc disc1 = new DigitalVideoDisc("MovieTitle", Category.movie, 5000, "directorName", 5);
+        List<DigitalVideoDisc> diskList = new ArrayList<>();
+        diskList.add(disc1);
+        diskList.add(disc1);
+        diskList.add(disc1);
+        diskList.add(disc1);
+        order.addOrders(diskList);
+    }
+    
+    public static boolean saveOrderInPropertiesFile(Order order) {
+        
+        DataFromProperties.saveListAsLinesInPropertiesFile(order.getOrders());
+        
+        try {
+            DataFromJson.addOrder(order);
+        } catch (IOException e) {
+            e.printStrackTrace();
+            System.err.println("File errors when saving order!");
+            return Boolean.FALSE;
+        }
+        
+        return Boolean.TRUE;
+    }
+        
     public static void propertyFiles()
     {
 
