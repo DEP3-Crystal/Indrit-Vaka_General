@@ -1,10 +1,10 @@
-# On media store part 2
+# On media store part 3
 This is an online media store exercise.
 This exercise saves and loads orders from
 * Json file
 * Property file
 
-The order class has a list of disk(DigitalVideoDisc)
+The order class has a list of Media(Disk and Book)
 
 Each disk has:
 * title
