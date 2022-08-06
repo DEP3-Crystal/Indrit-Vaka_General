@@ -1,3 +1,3 @@
-# indrit-vaka_General
-Exercises of general team
+# Indrit-Vaka_General
+Exercises of the general team
 
