@@ -1,6 +1,5 @@
 dist/*
 target/
 *.log
-OnMediaStore_3/
 .idea/
-pom.xml
+*.iml
