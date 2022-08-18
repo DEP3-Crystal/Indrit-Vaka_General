@@ -4,6 +4,7 @@ import com.crystal.oms.dao.*;
 import com.crystal.oms.model.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class OnlineMedia {
@@ -19,7 +20,6 @@ public class OnlineMedia {
         if (!saved) {
             System.exit(0);
         }
-
 
         // Still working on reading files Bug it can read only the properties that are in Media
         //Reading from files
