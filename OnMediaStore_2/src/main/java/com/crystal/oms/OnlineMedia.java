@@ -40,11 +40,9 @@ public class OnlineMedia {
 
     public static void populateOrder(Order order) {
         DigitalVideoDisc disc1 = new DigitalVideoDisc("MovieTitle", Category.movie, 5000, "directorName", 5);
-        List<DigitalVideoDisc> diskList = new ArrayList<>();
-        diskList.add(disc1);
-        diskList.add(disc1);
-        diskList.add(disc1);
-        diskList.add(disc1);
-        order.addOrders(diskList);
+        order.addOrder(disc1);
+        order.addOrder(disc1);
+        order.addOrder(disc1);
+        order.addOrder(disc1);
     }
 }
