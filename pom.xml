@@ -25,6 +25,7 @@
         <module>OnMediaStore_2</module>
         <module>Vending_Machine</module>
         <module>Testing</module>
+        <module>Tests</module>
     </modules>
 
     <properties>
