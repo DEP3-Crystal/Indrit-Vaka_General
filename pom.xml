@@ -26,6 +26,7 @@
         <module>Vending_Machine</module>
         <module>Testing</module>
         <module>Tests</module>
+        <module>OnlineMediaStore_4</module>
     </modules>
 
     <properties>
@@ -46,6 +47,12 @@
             <version>2.13.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     
 </project>
