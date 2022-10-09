@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>OnMediaStore_2</artifactId>
+    <artifactId>OnlineMediaStore_2</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

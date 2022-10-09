@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>OnMediaStore_3</artifactId>
+    <artifactId>OnlineMediaStore_3</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

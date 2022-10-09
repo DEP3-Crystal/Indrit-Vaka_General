@@ -21,8 +21,8 @@
         </plugins>
     </build>
     <modules>
-        <module>OnMediaStore_3</module>
-        <module>OnMediaStore_2</module>
+        <module>OnlineMediaStore_3</module>
+        <module>OnlineMediaStore_2</module>
         <module>Vending_Machine</module>
         <module>Testing</module>
         <module>Tests</module>
