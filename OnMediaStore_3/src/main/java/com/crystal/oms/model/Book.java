@@ -1,27 +1,19 @@
 package com.crystal.oms.model;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@Getter
 public class Book extends Media
 {
-    private List<Author> authors = new ArrayList<>();
+    private final List<Author> authors;
 
-    public List<Author> getAuthors()
-    {
-        return authors;
-    }
-
-    public Book(String title, Category category, Double cost, List<Author> authors)
+    public Book(String title, Category category, long cost, List<Author> authors)
     {
         this.category = category;
         this.title = title;
         this.cost = cost;
-        this.authors = authors;
-    }
-
-    public void setAuthors(List<Author> authors)
-    {
         this.authors = authors;
     }
 }

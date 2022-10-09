@@ -1,10 +1,10 @@
 package com.crystal.oms;
 
-import com.crystal.oms.dao.*;
+import com.crystal.oms.dao.DataFromJson;
+import com.crystal.oms.dao.DataFromProperties;
 import com.crystal.oms.model.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class OnlineMedia {
@@ -12,7 +12,8 @@ public class OnlineMedia {
 
         Order order = new Order();
 
-        populateOrder(order);
+        var media = populateOrder();
+        order.addOrders(media);
 
         //saving the data
         DataFromProperties.saveProperties(order.getOrders());
@@ -28,13 +29,19 @@ public class OnlineMedia {
         order2.addOrders(DataFromProperties.getPropertyList());
     }
 
-    public static void populateOrder(Order order) {
-        DigitalVideoDisc disc1 = new DigitalVideoDisc("MovieTitle", Category.movie, 5000, "directorName", 5);
-        List<DigitalVideoDisc> diskList = new ArrayList<>();
+    public static List<Media> populateOrder() {
+        DigitalVideoDisc disc1 = new DigitalVideoDisc("MovieTitle", Category.MOVIE, 5000, "directorName", 5);
+        List<Media> diskList = new ArrayList<>();
         diskList.add(disc1);
         diskList.add(disc1);
         diskList.add(disc1);
         diskList.add(disc1);
-        order.addOrders(diskList);
+        ArrayList<Author> authors = new ArrayList<>();
+        authors.add(new Author("Tyler", "Akidau"));
+        authors.add(new Author("Slava", "Chernyak"));
+        authors.add(new Author("Reuven", "Lax"));
+        Book book = new Book("Streaming Systems", Category.PROGRAMING, 548, authors);
+
+        return diskList;
     }
 }

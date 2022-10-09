@@ -58,7 +58,7 @@ public class DataFromProperties {
             media.load(stream);
             //set al the data
             disc.setTitle(media.getProperty("title"));
-            disc.setCost(Double.parseDouble(media.getProperty("cost")));
+            disc.setCost(Long.parseLong(media.getProperty("cost")));
             disc.setDirector(media.getProperty("director"));
             disc.setLength(Integer.parseInt(media.getProperty("length")));
 
@@ -122,7 +122,7 @@ public class DataFromProperties {
                 //and object MovieTitle|movie(model.Category)|5000.000000(cost)|director|5(length)
                 disc.setTitle(entities[0]);
                 disc.setCategory(Category.valueOf(entities[1]));
-                disc.setCost(Double.parseDouble(entities[2]));
+                disc.setCost(Long.parseLong(entities[2]));
                 disc.setDirector(entities[3]);
                 disc.setLength(Integer.parseInt(entities[4]));
                 //add the object to the list

@@ -1,21 +1,19 @@
 package com.crystal.oms.model;
 
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Author
 {
-    private String name;
+    private String firstName;
+    private String lastName;
 
-    public Author(String name)
-    {
-        this.name = name;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }

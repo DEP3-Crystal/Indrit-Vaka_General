@@ -10,7 +10,7 @@ public class DigitalVideoDisc extends Media
 
     }
 
-    public DigitalVideoDisc(String title, Category category, double cost, String director, int length)
+    public DigitalVideoDisc(String title, Category category, long cost, String director, int length)
     {
         this.title = title;
         this.category = category;
