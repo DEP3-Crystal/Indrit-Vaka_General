@@ -20,10 +20,10 @@ public class Folders {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                         "<folder name=\"c\">" +
-                        "<folder name=\"program files\">" +
-                        "<folder name=\"uninstall information\" />" +
-                        "</folder>" +
-                        "<folder name=\"users\" />" +
+                            "<folder name=\"program files\">" +
+                                "<folder name=\"uninstall information\" />" +
+                            "</folder>" +
+                            "<folder name=\"users\" />" +
                         "</folder>";
 
 
