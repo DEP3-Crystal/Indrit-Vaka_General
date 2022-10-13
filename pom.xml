@@ -13,17 +13,35 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
                 <configuration>
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+                <!--                <artifactId>maven-compiler-plugin</artifactId>-->
             </plugin>
+<!--            <plugin>-->
+
+<!--                <artifactId>maven-assembly-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifest>-->
+<!--                            <mainClass>com.crystal.oms.OnlineMedia.java</mainClass>-->
+<!--                        </manifest>-->
+<!--                    </archive>-->
+<!--                    <descriptorRefs>-->
+<!--                        <descriptorRef>jar-with-dependencies</descriptorRef>-->
+<!--                    </descriptorRefs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
         </plugins>
     </build>
     <modules>
+        <module>CacheUtility</module>
+        <module>Vending_Machine</module>
         <module>OnlineMediaStore_3</module>
         <module>OnlineMediaStore_2</module>
-        <module>Vending_Machine</module>
         <module>Testing</module>
         <module>Tests</module>
         <module>OnlineMediaStore_4</module>
@@ -50,9 +68,25 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>RELEASE</version>
+            <version>1.18.24</version>
             <scope>compile</scope>
         </dependency>
+
+        <!--Json Handle localDate -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+
     </dependencies>
-    
+
+
 </project>
