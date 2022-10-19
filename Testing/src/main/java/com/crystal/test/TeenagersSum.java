@@ -1,3 +1,4 @@
+package com.crystal.test;
 
 public class TeenagersSum {
 
