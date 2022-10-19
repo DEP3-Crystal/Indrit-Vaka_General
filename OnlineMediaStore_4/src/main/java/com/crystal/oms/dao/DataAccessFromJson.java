@@ -1,32 +1,27 @@
 package com.crystal.oms.dao;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+
 import com.crystal.oms.model.media.Media;
+import com.crystal.json.JsonSerializer;
+import com.crystal.path.ResourcesPath;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class DataAccessFromJson implements DataAccess {
-    static ObjectMapper mapper = new ObjectMapper();
 
-    static {
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-    }
-
-    List<Media> mediaList;
+    private final String fileName = "media.json";
+    Media[] mediaList;
+    private final String filePath = ResourcesPath.getResourcePathAsString(this.getClass()) + fileName;
 
     @Override
-    public List<Media> loadData() {
+    public Media[] loadData() {
         if (mediaList == null) {
             try {
-                InputStream resource = this.getClass().getResourceAsStream("media.json");
-                mediaList = Arrays.asList(mapper.readValue(resource, Media[].class));
+                String jsonText = Files.readString(Path.of(filePath));
+                mediaList = JsonSerializer.deserialize(jsonText, Media[].class);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -34,12 +29,21 @@ public class DataAccessFromJson implements DataAccess {
         return mediaList;
     }
 
+
+
     @Override
-    public void saveData(List<Media> media) {
-        try (FileWriter writer = new FileWriter("OnlineMediaStore_4/src/main/resources/media.json")) {
-            mapper.writeValue(writer, media);
+    public void saveData(Media[] media) {
+        String jsonText = JsonSerializer.serialize(media);
+        try (FileWriter fileWriter = new FileWriter(filePath)) {
+            fileWriter.write(jsonText);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public String getMediaFilePath() {
+        return filePath;
+    }
+
 }

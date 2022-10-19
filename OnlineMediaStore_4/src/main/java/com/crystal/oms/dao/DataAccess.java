@@ -1,10 +1,11 @@
 package com.crystal.oms.dao;
 
+
 import com.crystal.oms.model.media.Media;
 
-import java.util.List;
-
 public interface DataAccess {
-    List<Media> loadData();
-    void saveData(List<Media> media);
+    Media[] loadData();
+    void saveData(Media[] media);
+    // TODO does it makes sense to keep here the filePath?
+    String getMediaFilePath();
 }
