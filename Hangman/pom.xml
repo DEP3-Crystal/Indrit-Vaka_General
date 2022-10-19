@@ -22,6 +22,12 @@
             <artifactId>CacheUtility</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.crystal</groupId>
+            <artifactId>CacheUtility</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
